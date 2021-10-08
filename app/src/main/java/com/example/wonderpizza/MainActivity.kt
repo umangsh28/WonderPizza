@@ -2,6 +2,9 @@ package com.example.wonderpizza
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.CheckBox
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wonderpizza.Api.Papi
@@ -9,6 +12,7 @@ import com.example.wonderpizza.Interface.OnPizzaClick
 import com.example.wonderpizza.Modal.ResponseDTO
 import com.example.wonderpizza.Network.Network
 import com.example.wonderpizza.Recycler.Padapter
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_design.*
 import retrofit2.Call
@@ -24,15 +28,26 @@ class MainActivity : AppCompatActivity(),OnPizzaClick {
         setContentView(R.layout.activity_main)
 
 
-        ApiCalling()
+        apiCalling()
 
 
 
     }
 
+    private fun bottomButton() {
+       showBottomSheet()
+    }
+
+    private fun showBottomSheet() {
+       var bottomSheetDialog=BottomSheetDialog(this)
+       bottomSheetDialog.setContentView(R.layout.crust_design)
 
 
-    private fun ApiCalling() {
+        bottomSheetDialog.show()
+    }
+
+
+    private fun apiCalling() {
         val APIclientF = Network.getretro().create(Papi::class.java)
 
         APIclientF.getBook().enqueue(object : Callback<ResponseDTO> {
@@ -59,6 +74,8 @@ class MainActivity : AppCompatActivity(),OnPizzaClick {
     override fun OnItemClick(responseDTO: ResponseDTO, pos: Int) {
         super.OnItemClick(responseDTO, pos)
         Toast.makeText(this,"hiiiii",Toast.LENGTH_LONG).show()
+        bottomButton()
+
 
     }
 
