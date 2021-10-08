@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         >
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/headingT1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,13 +24,13 @@
             android:textColor="@color/white"
             android:textSize="25dp" />
 
-    <pl.droidsonroids.gif.GifImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="220dp"
-        android:layout_below="@id/headingT1"
-        android:layout_marginBottom="13dp"
-        android:id="@+id/GifImg"
-        android:src="@drawable/foodline" />
+        <pl.droidsonroids.gif.GifImageButton
+            android:id="@+id/GifImg"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:layout_below="@id/headingT1"
+            android:layout_marginBottom="13dp"
+            android:src="@drawable/foodline" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -38,8 +38,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/GifImg"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:shadowColor="#0F3549"
+            android:layout_marginBottom="10dp"
             android:text="Select Your Pizza"
-            android:layout_margin="10dp"
             android:textColor="@color/white"
             android:textSize="23dp"
             android:textStyle="normal" />
