@@ -2,8 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
 
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_width="match_parent"
@@ -13,20 +14,22 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+
 
             <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/PImg"
                 android:layout_width="136dp"
                 android:layout_height="137dp"
-                android:id="@+id/PImg"
-                android:background="@color/black" />
+                android:background="#004d76" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:id="@+id/Pname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/PImg" />
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/Pdes"
@@ -35,34 +38,44 @@
                 />
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:layout_below="@id/Pdes"
                 android:id="@+id/Padd"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="13dp"
                 android:layout_marginEnd="5dp"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/ic_baseline_add_24"
                 />
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:layout_below="@id/Pdes"
                 android:layout_toEndOf="@id/Padd"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="30dp"
                 android:id="@+id/Pmin"
 
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/ic_baseline_minimize_24"
                 />
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                android:id="@+id/Pcount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="30"
-                android:id="@+id/Pcount"
-                android:layout_toEndOf="@id/Padd"
                 android:layout_below="@id/Pdes"
-                />
+                android:layout_marginTop="12dp"
+                android:textSize="17dp"
+                android:layout_toEndOf="@id/Padd"
+                android:text="30" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/Pboolean"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="#AEA8A8" />
+
+
         </RelativeLayout>
     </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
 

@@ -10,7 +10,14 @@ import com.example.wonderpizza.R
 
 class Padapter() : RecyclerView.Adapter<Pholder>() {
 
-    private var responseDTO:ResponseDTO?=null
+    private var responseDTO : ResponseDTO?=null
+
+
+    constructor(responseDTO: ResponseDTO) : this() {
+        this.responseDTO=responseDTO
+
+    }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Pholder {
@@ -18,8 +25,9 @@ class Padapter() : RecyclerView.Adapter<Pholder>() {
     }
 
     override fun onBindViewHolder(holder: Pholder, position: Int) {
-        var responseDTO: Size = responseDTO.name.length
+        var responseDTO: ResponseDTO = responseDTO!!
         holder.setData(responseDTO)
+
     }
 
     override fun getItemCount(): Int {

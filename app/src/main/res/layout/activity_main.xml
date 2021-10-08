@@ -14,16 +14,15 @@
         >
 
         <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/headingT1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/headingT1"
-            android:background="#004d76"
-            android:text="@string/app_name"
-            android:textSize="25dp"
             android:layout_marginBottom="10dp"
+            android:background="#004d76"
             android:gravity="center"
+            android:text="@string/app_name"
             android:textColor="@color/white"
-            />
+            android:textSize="25dp" />
 
     <pl.droidsonroids.gif.GifImageButton
         android:layout_width="wrap_content"
@@ -34,23 +33,30 @@
         android:src="@drawable/foodline" />
 
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/headingT2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/headingT2"
             android:layout_below="@id/GifImg"
-            android:textStyle="normal"
+            android:text="Select Your Pizza"
+            android:layout_margin="10dp"
             android:textColor="@color/white"
             android:textSize="23dp"
-            android:text="Select Your Pizza"
-            />
+            android:textStyle="normal" />
     </RelativeLayout>
-
-    <view class="androidx.appcompat.app.AlertController$RecycleListView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
-    </view>
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:id="@+id/recycler"
+       />
+    </LinearLayout>
 
 
 
