@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wonderpizza.Api.Papi
+import com.example.wonderpizza.Interface.OnPizzaClick
 import com.example.wonderpizza.Modal.ResponseDTO
 import com.example.wonderpizza.Network.Network
 import com.example.wonderpizza.Recycler.Padapter
@@ -14,7 +15,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),OnPizzaClick {
 
     var responseDTO:ResponseDTO?=null
 
@@ -26,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         ApiCalling()
 
 
+
     }
+
+
 
     private fun ApiCalling() {
         val APIclientF = Network.getretro().create(Papi::class.java)
@@ -45,11 +49,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun SetRecycler() {
-        val adapterbusiness = Padapter(responseDTO!!)
+        val adapterbusiness = Padapter(responseDTO!!,this)
         val linearLayoutManager =
             LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler.adapter = adapterbusiness
         recycler.layoutManager = linearLayoutManager
+    }
+
+    override fun OnItemClick(responseDTO: ResponseDTO, pos: Int) {
+        super.OnItemClick(responseDTO, pos)
+        Toast.makeText(this,"hiiiii",Toast.LENGTH_LONG).show()
+
     }
 
 

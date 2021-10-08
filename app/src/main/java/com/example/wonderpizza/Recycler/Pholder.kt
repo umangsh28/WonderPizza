@@ -1,23 +1,30 @@
 package com.example.wonderpizza.Recycler
 
+import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.wonderpizza.Interface.OnPizzaClick
 import com.example.wonderpizza.Modal.Crust
 import com.example.wonderpizza.Modal.ResponseDTO
 import com.example.wonderpizza.R
 import kotlinx.android.synthetic.main.item_design.*
+import kotlinx.android.synthetic.main.item_design.view.*
 
-class Pholder(var itemView: View) :RecyclerView.ViewHolder(itemView) {
+class Pholder( itemView: View,click: OnPizzaClick) :RecyclerView.ViewHolder(itemView) {
 
 
 
-    fun setData(responseDTO: ResponseDTO){
+    fun setData(responseDTO: ResponseDTO, click: OnPizzaClick){
 
        var PizzaName= itemView.findViewById<TextView>(R.id.Pname)
-       PizzaName.text=responseDTO.name
+       PizzaName.text=responseDTO.crusts.get(adapterPosition).name
+
+        var PizzaPrice=itemView.findViewById<TextView>(R.id.Price)
+        PizzaPrice.text ="₹${responseDTO.crusts.get(adapterPosition).sizes.get(adapterPosition).price.toString()}"
 
        var isVeg=responseDTO.isVeg
        var HallMark=itemView.findViewById<ImageView>(R.id.Pboolean)
@@ -35,8 +42,13 @@ class Pholder(var itemView: View) :RecyclerView.ViewHolder(itemView) {
         PizzaDesc.text=responseDTO.description
 
 
+        itemView.Padd.setOnClickListener{
+            click.OnItemClick(responseDTO,adapterPosition)
+        }
+
 
     }
+
 
 
 
