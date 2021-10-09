@@ -18,109 +18,14 @@
             android:layout_height="270dp"
             android:background="@drawable/movingpizza" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ImgGif"
-        android:layout_marginTop="83dp"
-        android:text="Regular"
-        android:id="@+id/Tright"
-        android:textSize="26dp"
-        android:textColor="@color/white"
-        android:layout_marginStart="30dp"
-        />
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_below="@id/ImgGif"
+           android:layout_above="@id/TCount"
+           android:id="@+id/recyclerBottom"
+           />
 
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/checkReg"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_below="@id/ImgGif"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="70dp"
-            android:src="@drawable/ic_baseline_add_box_24" />
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/checkRegSub"
-            android:layout_width="35dp"
-            android:layout_below="@id/ImgGif"
-            android:layout_height="35dp"
-            android:paddingTop="-15dp"
-            android:src="@drawable/ic_baseline_indeterminate_check_box_24"
-            android:layout_alignParentEnd="true"
-            android:textColor="@color/white"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="35dp"
-            />
-
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Tright"
-            android:layout_marginTop="83dp"
-            android:text="Medium"
-            android:id="@+id/Tmed"
-            android:textSize="26dp"
-            android:backgroundTint="#004d76"
-            android:textColor="@color/white"
-            android:layout_marginStart="30dp"
-            />
-
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/checkMed"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_below="@id/checkReg"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="70dp"
-            android:backgroundTint="@color/white"
-            android:src="@drawable/ic_baseline_add_box_24" />
-
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/checkMedSub"
-            android:layout_width="29dp"
-            android:layout_height="25dp"
-            android:layout_below="@id/checkRegSub"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="35dp"
-            android:background="@color/white"
-            android:src="@drawable/ic_baseline_indeterminate_check_box_24" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Tmed"
-            android:layout_marginTop="83dp"
-            android:text="Large"
-            android:id="@+id/Tlarge"
-            android:textSize="26dp"
-            android:textColor="@color/white"
-            android:layout_marginStart="30dp"
-            />
-
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/checklarge"
-            android:layout_width="35dp"
-            android:layout_below="@id/checkMed"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_add_box_24"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="70dp"
-            />
-
-        <androidx.constraintlayout.utils.widget.ImageFilterButton
-            android:id="@+id/checklargesub"
-            android:layout_width="35dp"
-            android:layout_below="@id/checkMed"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_baseline_indeterminate_check_box_24"
-            android:layout_marginTop="87dp"
-            android:layout_marginEnd="35dp"
-            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/TCount"
@@ -128,8 +33,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="30dp"
-            android:text="Item"
             android:padding="6dp"
+            android:text="Item"
             android:textColor="@color/white"
             android:textSize="25dp" />
 
@@ -137,8 +42,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checklarge"
-            android:layout_marginTop="45dp"
+            android:layout_below="@id/recyclerBottom"
             android:text="Cart"
             android:layout_alignParentEnd="true"
             android:id="@+id/Bcart"
@@ -151,10 +55,10 @@
         <androidx.appcompat.widget.AppCompatCheckedTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checklarge"
-            android:layout_marginTop="60dp"
+            android:layout_below="@id/recyclerBottom"
+            android:layout_marginTop="5dp"
             android:text="Amount"
-           android:layout_centerHorizontal="true"
+            android:layout_centerHorizontal="true"
             android:id="@+id/Bamt"
             android:layout_marginEnd="12dp"
             android:textSize="20dp"

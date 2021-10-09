@@ -29,6 +29,7 @@
                 android:id="@+id/Pname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:textSize="17dp"
                 android:layout_toEndOf="@+id/PImg" />
 

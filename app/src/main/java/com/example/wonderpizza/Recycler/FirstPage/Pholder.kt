@@ -1,4 +1,4 @@
-package com.example.wonderpizza.Recycler
+package com.example.wonderpizza.Recycler.FirstPage
 
 import android.content.Context
 import android.view.View
@@ -22,7 +22,6 @@ class Pholder( itemView: View,click: OnPizzaClick) :RecyclerView.ViewHolder(item
 
        var PizzaName= itemView.findViewById<TextView>(R.id.Pname)
        PizzaName.text=responseDTO.crusts.get(adapterPosition).name
-
 
         var PizzaPrice=itemView.findViewById<TextView>(R.id.Price)
         PizzaPrice.text ="₹${responseDTO.crusts.get(adapterPosition).sizes.get(adapterPosition).price.toString()}"
