@@ -10,7 +10,7 @@
     <com.google.android.material.circularreveal.cardview.CircularRevealCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#F3EBEB"
+        android:backgroundTint="#22698E"
         app:cardCornerRadius="10dp">
 
         <RelativeLayout
@@ -27,6 +27,7 @@
 
             <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:id="@+id/Pname"
+                android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -38,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Pname"
+                android:textColor="@color/white"
                 android:layout_toEndOf="@+id/PImg"
                 android:textSize="13dp"
                 android:fontFamily="sans-serif-light" />
@@ -52,7 +54,7 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/ic_baseline_add_24"
-                android:backgroundTint="#004d76"
+                android:backgroundTint="#083F5C"
                 android:clipToOutline="true"
                 android:outlineAmbientShadowColor="#004d76"
                 android:outlineProvider="bounds"
@@ -69,10 +71,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_below="@id/Pdes"
+                android:textColor="@color/white"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="12dp"
                 android:layout_toEndOf="@id/PImg"
-
                 android:text="0"
                 android:textSize="13dp" />
 
