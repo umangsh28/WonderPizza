@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide.init
+import com.example.wonderpizza.Interface.OnCalClick
 import com.example.wonderpizza.Interface.OnPizzaClick
 import com.example.wonderpizza.Modal.Crust
 import com.example.wonderpizza.Modal.ResponseDTO
@@ -15,14 +16,14 @@ import com.example.wonderpizza.R
 import kotlinx.android.synthetic.main.crust_design.view.*
 import kotlinx.android.synthetic.main.item_crust.view.*
 
-class Bholder(var itemView: View):RecyclerView.ViewHolder(itemView) {
+class Bholder(var itemView: View,click: OnCalClick):RecyclerView.ViewHolder(itemView) {
 
-    fun setData(responseDTO: Crust, pos:Int) {
+    fun setData(responseDTO: Crust, pos:Int,click: OnCalClick) {
 
         val PizzaName1= itemView.findViewById<TextView>(R.id.crustName)
-        PizzaName1.text= responseDTO.sizes.get(adapterPosition).name
+        PizzaName1.text= responseDTO.sizes.get(pos).name
         val PizzaPrice1= itemView.findViewById<TextView>(R.id.pizzaPrice)
-        PizzaPrice1.text="₹${responseDTO.sizes.get(adapterPosition).price}"
+        PizzaPrice1.text="₹${responseDTO.sizes.get(pos).price}"
 
 //        var count=1;
 //        var sum=0;
@@ -44,11 +45,19 @@ class Bholder(var itemView: View):RecyclerView.ViewHolder(itemView) {
 //            }
 //        }
 
+        val plus=itemView.findViewById<ImageButton>(R.id.checkPlus)
+        val min=itemView.findViewById<ImageButton>(R.id.checkMin)
+
+        plus.setOnClickListener {
+            click.OnBottomClick(responseDTO,pos)
+        }
+
+        min.setOnClickListener {
+            click.OnBottomClickMin(responseDTO, pos)
+        }
+
 
     }
-
-
-
 
 
 }

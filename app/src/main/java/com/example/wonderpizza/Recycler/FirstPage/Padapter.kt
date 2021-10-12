@@ -29,7 +29,7 @@ class Padapter() : RecyclerView.Adapter<Pholder>() {
 
     override fun onBindViewHolder(holder: Pholder, position: Int) {
         var responseDTO: ResponseDTO = responseDTO!!
-        holder.setData(responseDTO,ClickListener!!)
+        holder.setData(responseDTO,ClickListener!!,position)
 
     }
 

@@ -28,19 +28,26 @@ class PviewModel : ViewModel() {
 
       fun callapi(){
 
+
           mainRepositary.getAll().enqueue(object : Callback<ResponseDTO>{
               override fun onResponse(p0: Call<ResponseDTO>, response: Response<ResponseDTO>){
                   val res:ResponseDTO=response.body()!!
                   mutableLiveaData.value=res
+
+
               }
 
               override fun onFailure(p0: Call<ResponseDTO>, p1: Throwable){
                   Log.d("Tag",p1.message.toString())
 
+
               }
+
 
           })
 
 
     }
+
+
 }

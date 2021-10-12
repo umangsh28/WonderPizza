@@ -18,7 +18,7 @@ class Pholder( itemView: View,click: OnPizzaClick) :RecyclerView.ViewHolder(item
 
 
 
-    fun setData(responseDTO: ResponseDTO, click: OnPizzaClick){
+    fun setData(responseDTO: ResponseDTO, click: OnPizzaClick,pos:Int){
 
        var PizzaName= itemView.findViewById<TextView>(R.id.Pname)
        PizzaName.text=responseDTO.crusts.get(adapterPosition).name
@@ -43,7 +43,7 @@ class Pholder( itemView: View,click: OnPizzaClick) :RecyclerView.ViewHolder(item
 
 
         itemView.Padd.setOnClickListener{
-            click.OnItemClick(responseDTO,adapterPosition)
+            click.OnItemClick(responseDTO,pos)
         }
 
 
