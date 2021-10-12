@@ -40,18 +40,17 @@
             android:textSize="25dp" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Bcart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/recyclerBottom"
-            android:text="Cart"
             android:layout_alignParentEnd="true"
-            android:id="@+id/Bcart"
-            android:backgroundTint="#153B50"
-            android:layout_marginEnd="12dp"
-            android:textSize="20dp"
-            android:textColor="@color/white"
             android:layout_marginStart="30dp"
-            />
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="#153B50"
+            android:text="Cart"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
         <androidx.appcompat.widget.AppCompatCheckedTextView
             android:layout_width="wrap_content"

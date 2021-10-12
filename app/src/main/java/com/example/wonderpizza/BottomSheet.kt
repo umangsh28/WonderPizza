@@ -59,6 +59,11 @@ class BottomSheet : BottomSheetDialogFragment(), OnCalClick{
         ini()
 
 
+        Bcart.setOnClickListener {
+            dataToCart()
+        }
+
+
 
     }
 
@@ -94,14 +99,27 @@ class BottomSheet : BottomSheetDialogFragment(), OnCalClick{
     }
 
     var count=0;
+    var count1=0
+    var name=""
     var sum=0;
+    var sum1=0;
+    var sum2=0
 
     override fun OnBottomClick(responseDTO: Crust, pos: Int) {
 
         TCount.text="${++count}"
 
+
+
+        if(crustName.text.equals(responseDTO.sizes.get(pos).name)){
+            count1=count
+        }
+        name=responseDTO.sizes.get(pos).name
+
+
         sum += responseDTO.sizes.get(pos).price.toInt()
         Bamt.text="₹${sum}"
+        sum1=sum
 
     }
 
@@ -113,6 +131,7 @@ class BottomSheet : BottomSheetDialogFragment(), OnCalClick{
             TCount.text = "${--count}"
 
             Bamt.text = "₹${sum}"
+            sum2=sum
         }else{
             Toast.makeText(context,"please add item",Toast.LENGTH_SHORT).show()
         }
@@ -121,6 +140,21 @@ class BottomSheet : BottomSheetDialogFragment(), OnCalClick{
             sum=0
             Bamt.text="0"
         }
+
+    }
+
+
+    fun dataToCart(){
+
+        val i=Intent(context,Cart::class.java)
+
+        i.putExtra("namepizza",name)
+
+        i.putExtra("sumprice",sum)
+
+        i.putExtra("pcount",count1)
+
+        startActivity(i)
 
     }
 
